@@ -1,0 +1,12 @@
+configuration:
+  projectName: spring-boot-configuration
+  
+management:
+  security:
+    enabled: false
+    
+spring:
+  profiles:
+    active:
+    - dev
+    - cloud
