@@ -1,0 +1,16 @@
+configuration:
+  message: Hello Message from local property
+ 
+
+spring:
+  application:
+    name: config-client
+# N.B. this is the default:
+  cloud:
+    config:
+      uri: http://localhost:8888 
+      
+      
+management:
+  security:
+    enabled: false
