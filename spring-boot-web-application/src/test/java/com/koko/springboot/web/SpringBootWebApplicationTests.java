@@ -1,4 +1,4 @@
-package com.koko.springbootwebapplication;
+package com.koko.springboot.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
