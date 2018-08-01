@@ -3,6 +3,6 @@
 <title>Login JSP</title>
 </head>
 <body>
-My First JSP !!!
+Welcome ${name}.
 </body>
 </html>
