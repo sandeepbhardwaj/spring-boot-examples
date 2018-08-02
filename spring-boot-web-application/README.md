@@ -31,4 +31,3 @@ spring.mvc.view.suffix: .jsp
 - DispatcherServlet makes the model available to view and executes it.
 - DispatcherServlet returns HTTP Response Back.
 - Flow : http://docs.spring.io/spring-framework/docs/2.0.8/reference/images/mvc.png
-
