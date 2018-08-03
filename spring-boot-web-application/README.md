@@ -31,3 +31,32 @@ spring.mvc.view.suffix: .jsp
 - DispatcherServlet makes the model available to view and executes it.
 - DispatcherServlet returns HTTP Response Back.
 - Flow : http://docs.spring.io/spring-framework/docs/2.0.8/reference/images/mvc.png
+
+## Implementing Server Side Validation
+- Command Bean or Form Backing Bean
+-- Add Validation
+-- Use Validation on Controller
+-- Display Errors in View
+
+- Command Bean
+-- Controller
+-- View - Spring Form Tags
+
+```
+@RequestMapping(value = "/add-todo", method = RequestMethod.POST)
+public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
+
+	if (result.hasErrors()) {
+		return "todo";
+	}
+
+	service.addTodo((String) model.get("name"), todo.getDesc(), new Date(), false);
+	return "redirect:/list-todos";
+}
+```
+
+```
+<form:form method="post" modelAttribute="todo">
+<form:errors path="desc" cssClass="text-warning" />
+```
+
