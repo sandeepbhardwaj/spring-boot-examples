@@ -34,13 +34,13 @@ spring.mvc.view.suffix: .jsp
 
 ## Implementing Server Side Validation
 - Command Bean or Form Backing Bean
--- Add Validation
--- Use Validation on Controller
--- Display Errors in View
+    * Add Validation
+    * Use Validation on Controller
+    * Display Errors in View
 
 - Command Bean
--- Controller
--- View - Spring Form Tags
+    * Controller
+    * View - Spring Form Tags
 
 ```
 @RequestMapping(value = "/add-todo", method = RequestMethod.POST)
