@@ -17,6 +17,7 @@
 					<th>Target Date</th>
 					<th>Is it Done?</th>
 					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -25,6 +26,8 @@
 						<td>${todo.desc}</td>
 						<td>${todo.targetDate}</td>
 						<td>${todo.done}</td>
+						<td><a type="button" class="btn btn-success"
+							href="/update-todo?id=${todo.id}">Update</a></td>
 						<td><a type="button" class="btn btn-warning"
 							href="/delete-todo?id=${todo.id}">Delete</a></td>
 					</tr>
@@ -34,10 +37,10 @@
 		<div>
 			<a class="button" href="/add-todo">Add a Todo</a>
 		</div>
-
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -60,3 +60,11 @@ public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 <form:errors path="desc" cssClass="text-warning" />
 ```
 
+## Spring boot security starter
+
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+```
