@@ -60,6 +60,24 @@ public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 <form:errors path="desc" cssClass="text-warning" />
 ```
 
+## InitBinder
+```
+@InitBinder
+protected void initBinder(WebDataBinder binder) {
+	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	binder.registerCustomEditor(Date.class, new CustomDateEditor(
+			dateFormat, false));
+}
+```
+
+```
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:formatDate value="${todo.targetDate}" pattern="dd/MM/yyyy" />
+```
+
+### JSP Fragments
+
+
 ## Spring boot security starter
 
 ```
