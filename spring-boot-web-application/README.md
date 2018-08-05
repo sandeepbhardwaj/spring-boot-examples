@@ -91,14 +91,12 @@ protected void initBinder(WebDataBinder binder) {
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
-	//Create User - in28Minutes/dummy
 	@Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth)
             throws Exception {
-		UserDetails userDetails=User.withUsername("in28Minutes").password("{noop}dummy").roles("USER").build();
+		UserDetails userDetails=User.withUsername("sandeep").password("{noop}dummy").roles("USER").build();
 
-        auth.inMemoryAuthentication().withUser(userDetails)
-        	.withUser(User.withUsername("sandeep").password("{noop}sandeep").roles("USER").build());
+        auth.inMemoryAuthentication().withUser(userDetails);
     }
 	
 	@Override

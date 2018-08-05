@@ -11,11 +11,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
-	//Create User - in28Minutes/dummy
+
 	@Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth)
             throws Exception {
-		UserDetails userDetails=User.withUsername("in28Minutes").password("{noop}dummy").roles("USER").build();
+		UserDetails userDetails=User.withUsername("vivaan").password("{noop}dummy").roles("USER").build();
 
         auth.inMemoryAuthentication().withUser(userDetails)
         	.withUser(User.withUsername("sandeep").password("{noop}sandeep").roles("USER").build());
