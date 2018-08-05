@@ -6,9 +6,27 @@
 - @ResponseBody annotation
 
 ## Spring Web MVC
+**application.properties**
+
 ```
+logging.level.org.springframework.web: INFO
+
 spring.mvc.view.prefix: /WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
+```
+
+**application.yml**
+
+```
+logging:
+   level:
+      org.springframework.web: INFO
+
+spring:
+   mvc:
+      view:
+         prefix: /WEB-INF/jsp/
+         suffix: .jsp
 ```
 
 ```
