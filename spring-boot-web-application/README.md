@@ -107,3 +107,53 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     }
 }
 ```
+
+## Access user in spring security
+```
+private String getLoggedInUserName() {
+	Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+	if (principal instanceof UserDetails)
+		return ((UserDetails) principal).getUsername();
+
+	return principal.toString();
+}
+```
+
+## Implement logout in spring security
+```
+@RequestMapping(value = "/logout", method = RequestMethod.GET)
+public String logout(HttpServletRequest request,
+		HttpServletResponse response) {
+	
+	Authentication authentication = SecurityContextHolder.getContext()
+			.getAuthentication();
+	
+	if (authentication != null) {
+		new SecurityContextLogoutHandler().logout(request, response,
+				authentication);
+	}
+
+	return "redirect:/";
+}
+```
+
+## Exception Handling
+```
+@Controller("error")
+public class ExceptionController {
+
+    private Log logger = LogFactory.getLog(ExceptionController.class);
+
+    @ExceptionHandler(Exception.class)
+    public ModelAndView handleError(HttpServletRequest req, Exception ex) {
+        logger.error("Request: " + req.getRequestURL() + " raised " + ex);
+
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("exception", ex);
+        mav.addObject("url", req.getRequestURL());
+        mav.setViewName("error");
+        return mav;
+    }
+}
+```

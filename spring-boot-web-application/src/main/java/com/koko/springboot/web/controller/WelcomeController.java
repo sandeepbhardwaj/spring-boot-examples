@@ -12,11 +12,11 @@ public class WelcomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	private String showWelcomePage(ModelMap model) {
-		model.put("name", getLoggedInUserName(model));
+		model.put("name", getLoggedInUserName());
 		return "welcome";
 	}
 
-	private String getLoggedInUserName(ModelMap model) {
+	private String getLoggedInUserName() {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		if (principal instanceof UserDetails)
