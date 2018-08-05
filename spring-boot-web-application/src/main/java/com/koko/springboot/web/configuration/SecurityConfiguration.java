@@ -18,7 +18,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		UserDetails userDetails=User.withUsername("vivaan").password("{noop}dummy").roles("USER").build();
 
         auth.inMemoryAuthentication().withUser(userDetails)
-        	.withUser(User.withUsername("sandeep").password("{noop}sandeep").roles("USER").build());
+        	.withUser(User.withUsername("sandeep").password("{noop}dummy").roles("USER").build());
     }
 	
 	@Override
