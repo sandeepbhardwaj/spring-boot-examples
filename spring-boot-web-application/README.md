@@ -1,3 +1,4 @@
+## Spring Boot | Spring MVC Application
 - Spring Boot Starter Parent - Provides all the dependencies version and java version
 - Spring Boot Starter Web - Provides actual dependencies for starter web.
 - DevTools - Provides a faster way to deploy changes without restart the server.
