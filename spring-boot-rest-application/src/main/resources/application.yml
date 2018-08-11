@@ -1,3 +1,6 @@
 logging:
    level:
       org.springframework.web: INFO
+      
+
+welcome.message: Message from application.yml

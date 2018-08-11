@@ -39,4 +39,30 @@ JacksonAutoConfiguration matched:
 
 ## Message converters
 - jackson-databind to convert object to json and json to object.
--
+
+## Dynamic Configuration in Sprint Boot
+- @Value
+
+```
+welcome:
+    message: Welcome to your first Spring Boot app!
+```
+```
+@Value("${welcome.message}")
+```
+
+- Passing using program argument
+
+```
+--welcome.message="Welcome message from program argument"
+```
+"OR"
+
+```
+--spring.config.location=classpath:/default.properties
+```
+- Using Placeholders
+
+```
+--welcome.message="Welcome to ${app.name}"
+```
