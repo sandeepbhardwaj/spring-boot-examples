@@ -40,6 +40,27 @@ JacksonAutoConfiguration matched:
 ## Message converters
 - jackson-databind to convert object to json and json to object.
 
+## Spring Boot Actuator
+- /env, /metrics, /trace, /dump, /shutdown, /beans, / autoconfig, /configprops, /mappings
+
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+
+## HAL Browser
+Provides UI around actuator for easy access of actuator properties
+- http://localhost:8080/browser/index.html
+
+```
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-rest-hal-browser</artifactId>
+</dependency>
+```
+
 ## Dynamic Configuration in Sprint Boot
 - @Value
 
@@ -65,4 +86,29 @@ welcome:
 
 ```
 --welcome.message="Welcome to ${app.name}"
+```
+
+## Spring Profiles
+Configure Resources - Databases, Queues, External Services.
+Create a property file with profile name
+
+```
+application-{profile-name}.properties
+```
+- Adding property in property/yaml file
+
+```
+spring.profiles.active=dev|qa|prod
+```
+
+- VM arguments
+
+```
+-Dspring.profiles.active=prod
+```
+
+- Using @Profile("prod") on bean
+
+```
+@Profile("dev")
 ```

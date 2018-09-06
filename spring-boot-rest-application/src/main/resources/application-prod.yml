@@ -1,0 +1,6 @@
+logging:
+   level:
+      org.springframework.web: INFO
+      
+
+welcome.message: Message from PROD application.yml
